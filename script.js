@@ -1,23 +1,33 @@
-const slider = document.getElementById("slider");
+document.addEventListener("DOMContentLoaded", function () {
 
-const totalImagenes = 7; // cambia según tus fotos
-let indice = 1;
+    const slider = document.getElementById("slider");
 
-slider.src = indice + ".jpg";
+    const totalImagenes = 7; // cambia si tienes más
+    let indice = 1;
 
-setInterval(() => {
+    slider.src = indice + ".jpg";
 
-    slider.style.transform = "rotateY(-90deg)";
+    setInterval(function () {
 
-    setTimeout(() => {
-        indice++;
-        if (indice > totalImagenes) indice = 1;
+        slider.style.transform = "rotateY(-90deg)";
 
-        slider.src = indice + ".jpg";
-        slider.style.transform = "rotateY(0deg)";
-    }, 500);
+        setTimeout(function () {
 
-}, 3000);
+            indice++;
+            if (indice > totalImagenes) {
+                indice = 1;
+            }
+
+            slider.src = indice + ".jpg";
+            slider.style.transform = "rotateY(0deg)";
+
+        }, 500);
+
+    }, 3000);
+
+});
+
+
 
 
 
